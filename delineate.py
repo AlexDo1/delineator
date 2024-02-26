@@ -671,7 +671,9 @@ def load_gdf(geotype: str, basin: int, high_resolution: bool) -> gpd.GeoDataFram
     :return: a GeoPandas GeoDataFrame
 
     """
-
+    # make sure that basin is of type int
+    basin = int(basin)
+    
     # First, check for the presence of a pickle file
     if PICKLE_DIR != '':
         pickle_fname = get_pickle_filename(geotype, basin, high_resolution)
