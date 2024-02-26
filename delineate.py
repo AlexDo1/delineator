@@ -379,6 +379,8 @@ def delineate():
     # Iterate over the basins so that we only have
     # to open up each Level 2 Basin shapefile once, and handle all of the gages in it
     for basin in basins:
+        # make sure that basin is of type int
+        basin = int(basin)
         # Create a dataframe of the gages_basins_join in that basins
         gages_in_basin = gages_basins_join[gages_basins_join["BASIN"] == basin]
         num_gages_in_basin = len(gages_in_basin)
@@ -671,8 +673,6 @@ def load_gdf(geotype: str, basin: int, high_resolution: bool) -> gpd.GeoDataFram
     :return: a GeoPandas GeoDataFrame
 
     """
-    # make sure that basin is of type int
-    basin = int(basin)
     
     # First, check for the presence of a pickle file
     if PICKLE_DIR != '':
