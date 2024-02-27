@@ -8,3 +8,4 @@ pysheds~=0.3.5
 sigfig~=1.3.3
 pyproj~=3.6.1
 matplotlib-inline~=0.1.6
+pygeos~=0.14
